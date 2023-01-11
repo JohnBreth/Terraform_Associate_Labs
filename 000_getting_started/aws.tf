@@ -9,7 +9,7 @@ resource "aws_instance" "cyberinsight_server" {
 }
 
 #Use modules to configure a bunch of resources at one time. https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
-module "vpc" {
+/*module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "CyberInsight-vpc"
@@ -27,5 +27,5 @@ module "vpc" {
     Environment = "dev"
   }
 }
-
+*/
 
