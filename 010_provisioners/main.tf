@@ -9,6 +9,7 @@ terraform {
     }
   }
 
+  #Terraform AWS modules
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -17,6 +18,17 @@ terraform {
   }
 }
 
+#Set AWS as provider
 provider "aws" {
   region  = "us-east-1"
+}
+
+#Test server resource
+resource "aws_instance" "cyberinsight_server" {
+  ami           = "ami-0b5eea76982371e91"
+  instance_type = "t2.micro"
+
+  tags = {
+    Name = "CyberInsight-Server"
+  }
 }
