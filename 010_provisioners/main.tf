@@ -23,6 +23,11 @@ provider "aws" {
   region  = "us-east-1"
 }
 
+#Set SSH key
+resource "aws_key_pair" "deployer" {
+  key_name   = "deployer-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBV0R1YyPXOKJpXal4rlI+nk8o/1Aze232DFBnzM1s1wGPshU6jGSS6jCMrn4sYRqjljfTVHRTxoT0v70Obr1pPnGUw8OM0rjY5QSeodfW6VW2Nvr2gx3BqSMQb3AUQdIIbdXtJiY1Ers5194fmb+Gtx2I9cpunXvRsMSqh1XkSA33Vi3qn/B4wNH715W94kJOcpoFInE7+XEd/WGv0GbbvGzE3X8Z54NCLC8ZsmGXEzHb68RZsS9XhPWcnPSWUWBa4rwaCPobLNcN8PVjdS8TnfKSlIaSJCKEiPUqm9TUzGtMNs5z5492mQMruQlpXxqHD+s9isNgUtmtO8G6lRMhUM5nJbkRL7xhzvl/k07GZmRlR3xYBYdXpV1YFsrEvkYEczxULSLSNEf7TycF6Bdgds/QgnQ/Top8CCz0yp8zyyQo7Z6FIHf3eKb2xLH3KqI7AXD9wrCekoo+hoPKYT3vafYwCNPRe/16ob+jTHDHqxgFhsB9JjuLVqC7eL+yFuM="
+}
 #Test server resource
 resource "aws_instance" "cyberinsight_server" {
   ami           = "ami-0b5eea76982371e91"
